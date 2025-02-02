@@ -1,0 +1,10 @@
+<div class="parent-fragment" th:fragment="parent" xmlns:th="http://www.w3.org/1999/xhtml">
+    <h1>This is Parent Fragment</h1>
+</div>
+<div class="parent-fragment-2" th:fragment="parent2(x,y)" xmlns:th="http://www.w3.org/1999/xhtml">
+    <h1>This is parent 2 with value of x as <span th:text="${x}"></span>
+        and value of y as <span th:text="${y}"></span></h1>
+</div>
+<div class="parent-fragment-dynamic" th:fragment="parent3(content)" xmlns:th="http://www.w3.org/1999/xhtml">
+    <div th:replace="${content}"></div>
+</div>
