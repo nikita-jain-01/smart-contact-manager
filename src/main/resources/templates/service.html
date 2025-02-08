@@ -1,11 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Service Page</title>
 </head>
 <body>
-<h1>This is service page</h1>
+    <h1>This is service page</h1>
+    <hr/>
+    <div th:replace="~{base :: parent3(~{::section})}">
+        <section>
+            <p>This is dynamic content passed to base parent</p>
+        </section>
+    </div>
+
+    <!-- To pass html through id -->
+    <div th:replace="~{base :: parent3(~{::#dynamic_content})}">
+        <section id="dynamic_content">
+            <h1>This is dynamic content passed to base parent</h1>
+        </section>
+    </div>
 </body>
 </html>

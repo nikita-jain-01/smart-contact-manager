@@ -18,5 +18,15 @@
 <div class="host-tag" th:replace="~{base::parent3(~{::p})}">
     <p>This is Dynamic Content</p>
 </div>
+
+<!-- div as html will become argument in parent3 fragment -->
+<div class="host-tag" th:replace="~{base::parent3(~{::section})}">
+    <section>
+        <h1> Section </h1>
+        <p>This is dynamic content to pass as an html in parent 3 just to test</p>
+        <button>Click on dynamic content</button>
+    </section>
+    <p>This is Dynamic Content</p>
+</div>
 </body>
 </html>
