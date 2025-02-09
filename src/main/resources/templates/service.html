@@ -8,6 +8,9 @@
 <body>
     <h1>This is service page</h1>
     <hr/>
+    <!-- If we clearly see id='content_dynamic' and class='content_dynamic' are printing two times
+         because this below fragment is taking all section present in this class. It is not happening
+         in below fragments because there we're using id and class to pass in fragment and it is unique -->
     <div th:replace="~{base :: parent3(~{::section})}">
         <section>
             <p>This is dynamic content passed to base parent</p>
@@ -18,6 +21,13 @@
     <div th:replace="~{base :: parent3(~{::#dynamic_content})}">
         <section id="dynamic_content">
             <h1>This is dynamic content passed to base parent</h1>
+        </section>
+    </div>
+
+    <!-- To pass html through class -->
+    <div th:replace="~{base :: parent3(~{::.content_dynamic})}">
+        <section class="content_dynamic">
+            <h1>This is dynamic content with class passed to base parent</h1>
         </section>
     </div>
 </body>
