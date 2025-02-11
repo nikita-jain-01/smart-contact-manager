@@ -16,7 +16,10 @@ public class PageController {
     }
 
     @RequestMapping("/about")
-    public String aboutPage() {
+    public String aboutPage(Model model) {
+        model.addAttribute("wantToPassMarkup", true); // Even we comment this or not false will pass in wantToPassMarkup,
+                                                                              // because after that it is calling about template
+        model.addAttribute("wantToPassMarkup", false);
         System.out.println("About Page Loading...");
         return "about";
     }

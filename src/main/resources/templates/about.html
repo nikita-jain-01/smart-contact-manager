@@ -28,5 +28,13 @@
     </section>
     <p>This is Dynamic Content</p>
 </div>
+
+<!-- This testing id section will come two times because while calling parent3 and passing section above. But if we see in response we'll see
+     expression div class and inside that only one time section with testing id is written -->
+<div class="expression" th:insert = "${wantToPassMarkup} ? ~{base :: parent3(~{::#testing})} : ~{base :: parent2('one', 'two')}">
+    <section id="testing">
+        <h1>Testing Expression Worked</h1>
+    </section>
+</div>
 </body>
 </html>
