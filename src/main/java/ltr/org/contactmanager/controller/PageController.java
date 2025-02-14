@@ -29,4 +29,10 @@ public class PageController {
         System.out.println("Service Page Loading...");
         return "service";
     }
+
+    @RequestMapping("/layout")
+    public String layoutPage() {
+        System.out.println("Layout Page Loading...");
+        return "layoutfragment";
+    }
 }
