@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" th:fragment="layout(content)" xmlns:th="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>About Layout</title>
-    <link rel="stylesheet" data-th-href="@{'/css/output.css'}"/>
-    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
-</head>
-<body>
-    <h1>This is Layout page</h1>
-    <section th::replace = "${content}"></section>
-    <!--    flow bite script-->
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
-</body>
+<!-- We can pass ~{} also in place of ~{::script} if we don't want to pass anything -->
+<html th:replace="~{layoutfragment::layout(~{::#testinglayout}, ~{::title}, ~{::script})}" xmlns:th="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Layout Page</title>
+    </head>
+    <body>
+        <h1 id="testinglayout"> Welcome to Layout Fragment </h1>
+        <script>
+            console.log("Layout Page Script");
+        </script>
+        <script>
+            console.log("Second Layout Page Script");
+        </script>
+    </body>
 </html>
