@@ -33,6 +33,6 @@ public class PageController {
     @RequestMapping("/layout")
     public String layoutPage() {
         System.out.println("Layout Page Loading...");
-        return "layoutfragment";
+        return "layout";
     }
 }
