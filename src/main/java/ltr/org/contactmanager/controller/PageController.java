@@ -2,6 +2,7 @@ package ltr.org.contactmanager.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -34,5 +35,23 @@ public class PageController {
     public String layoutPage() {
         System.out.println("Layout Page Loading...");
         return "layout";
+    }
+
+    @GetMapping("/login")
+    public String loginPage() {
+        System.out.println("Login Page Loading...");
+        return "login";
+    }
+
+    @GetMapping("/register")
+    public String registerPage() {
+        System.out.println("Register Page Loading...");
+        return "register";
+    }
+
+    @GetMapping("/contact")
+    public String contactPage() {
+        System.out.println("Contact Page Loading...");
+        return "contact";
     }
 }

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<!-- We can pass ~{} also in place of ~{::script} if we don't want to pass anything -->
+<html th:replace="~{layoutfragment::layout(~{::#testinglayout}, ~{::title}, ~{::script})}" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Signup Page</title>
+</head>
+<body>
+<h1 id="testinglayout"> Welcome to Signup Page </h1>
+<script>
+    console.log("Signup Page Script");
+</script>
+<script>
+    console.log("Second Signup Page Script");
+</script>
+</body>
+</html>
